@@ -22,8 +22,6 @@ terraform {
 
 provider "aws" {
   region = "us-west-2"
-  access_key = "AKIAZ5Y3P7MCSYDQMW5P"
-  secret_key = "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"
 }
 
 resource "random_pet" "sg" {}
