@@ -33,3 +33,21 @@ resource "aws_dynamodb_table" "listings"{
     type = "N"
   }
 }
+resource "aws_dynamodb_table" "extracted-keys"{
+  name = "extracted-keys"
+  hash_key = "ListingID"
+  
+  attribute {
+    name = "ListingId"
+    type = "N"
+  }
+}
+resource "aws_dynamodb_table" "openai-prompt-result"{
+  name = "Listings"
+  hash_key = "ListingID"
+  
+  attribute {
+    name = "ListingId"
+    type = "N"
+  }
+}
