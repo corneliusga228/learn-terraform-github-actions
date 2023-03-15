@@ -26,7 +26,10 @@ provider "aws" {
 
 resource "aws_dynamodb_table" "listings"{
   name = "Listings"
-  hash_key = "ListingID"
+  billing_mode   = "PROVISIONED"
+  read_capacity  = 20
+  write_capacity = 20
+  hash_key       = "ListingId"
   
   attribute {
     name = "ListingId"
@@ -47,7 +50,10 @@ resource "aws_dynamodb_table" "extracted-keys"{
 }
 resource "aws_dynamodb_table" "openai-prompt-result"{
   name = "Listings"
-  hash_key = "ListingID"
+  billing_mode   = "PROVISIONED"
+  read_capacity  = 20
+  write_capacity = 20
+  hash_key       = "ListingId"
   
   attribute {
     name = "ListingId"
