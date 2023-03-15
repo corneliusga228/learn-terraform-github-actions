@@ -35,7 +35,10 @@ resource "aws_dynamodb_table" "listings"{
 }
 resource "aws_dynamodb_table" "extracted-keys"{
   name = "extracted-keys"
-  hash_key = "ListingID"
+  billing_mode   = "PROVISIONED"
+  read_capacity  = 20
+  write_capacity = 20
+  hash_key       = "ListingId"
   
   attribute {
     name = "ListingId"
